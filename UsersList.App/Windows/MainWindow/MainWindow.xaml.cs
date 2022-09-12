@@ -24,6 +24,10 @@ public partial class MainWindow : Window
             {
                 Style = (Style)Resources["StyleUserCard"]
             };
+            userCard.MouseDoubleClick += (sender, args) =>
+            {
+                new UserWindow.UserWindow(user).Show();
+            };
             UsersPanel.Children.Add(userCard);
         }
     }
