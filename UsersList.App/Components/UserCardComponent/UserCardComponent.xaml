@@ -3,15 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Regular"
+             TextElement.FontSize="13"
+             TextOptions.TextFormattingMode="Ideal"
+             TextOptions.TextRenderingMode="Auto"
+             Background="{DynamicResource MaterialDesignPaper}"
+             FontFamily="{DynamicResource MaterialDesignFont}"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300"
              x:Name="UserCard">
 
-    <UserControl.Resources>
-        <ResourceDictionary Source="UserCardComponentStyles.xaml"/>
-    </UserControl.Resources>
-
-    <Border Style="{StaticResource StyleBorder}">
+    <materialDesign:Card Padding="10">
         <Grid DataContext="{Binding ElementName=UserCard}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
@@ -21,15 +25,14 @@
 
             <Label Grid.Row="0"
                    Content="{Binding User.Id}"
-                   Style="{StaticResource StyleLabel}" />
+                   Style="{StaticResource MaterialDesignLabel}" />
             <Label Grid.Row="1"
                    Content="{Binding User.Name}"
-                   Style="{StaticResource StyleLabel}" />
+                   Style="{StaticResource MaterialDesignLabel}" />
             <Label Grid.Row="2"
                    Content="{Binding User.Username}"
-                   Style="{StaticResource StyleLabel}" />
+                   Style="{StaticResource MaterialDesignLabel}" />
         </Grid>
-    </Border>
-
+    </materialDesign:Card>
 
 </UserControl>

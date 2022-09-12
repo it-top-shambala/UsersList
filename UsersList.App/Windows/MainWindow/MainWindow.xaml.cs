@@ -22,7 +22,7 @@ public partial class MainWindow : Window
         {
             var userCard = new UserCardComponent(user)
             {
-                Style = (Style)Resources["StyleUserCard"]
+                Margin = new Thickness(10.0)
             };
             userCard.MouseDoubleClick += (sender, args) =>
             {
