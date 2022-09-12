@@ -13,4 +13,3 @@ public partial class UserCardComponent : UserControl
         InitializeComponent();
     }
 }
-

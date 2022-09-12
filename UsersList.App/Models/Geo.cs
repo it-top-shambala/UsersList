@@ -4,9 +4,7 @@ namespace UsersList.App.Models;
 
 public class Geo
 {
-    [JsonPropertyName("lat")]
-    public string Lat { get; set; }
+    [JsonPropertyName("lat")] public string Lat { get; set; }
 
-    [JsonPropertyName("lng")]
-    public string Lng { get; set; }
+    [JsonPropertyName("lng")] public string Lng { get; set; }
 }

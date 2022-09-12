@@ -3,25 +3,24 @@ using System.Windows;
 using UsersList.App.Components.UserCardComponent;
 using UsersList.App.Models;
 
-namespace UsersList.App.Windows.MainWindow
+namespace UsersList.App.Windows.MainWindow;
+
+public partial class MainWindow : Window
 {
-    public partial class MainWindow : Window
+    private readonly IEnumerable<User> _users;
+
+    public MainWindow()
     {
-        private IEnumerable<User> _users;
+        _users = Users.GetUsers();
+        InitializeComponent();
+        InitUserPanel();
+    }
 
-        public MainWindow()
+    private void InitUserPanel()
+    {
+        foreach (var user in _users)
         {
-            _users = Users.GetUsers();
-            InitializeComponent();
-            InitUserPanel();
-        }
-
-        private void InitUserPanel()
-        {
-            foreach (var user in _users)
-            {
-                UsersPanel.Children.Add(new UserCardComponent(user));
-            }
+            UsersPanel.Children.Add(new UserCardComponent(user));
         }
     }
 }
