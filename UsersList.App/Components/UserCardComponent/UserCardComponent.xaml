@@ -6,18 +6,30 @@
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300"
              x:Name="UserCard">
-    <Grid DataContext="{Binding ElementName=UserCard}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0"
-                   Text="{Binding User.Id}" />
-        <TextBlock Grid.Row="1"
-                   Text="{Binding User.Name}" />
-        <TextBlock Grid.Row="2"
-                   Text="{Binding User.Username}" />
-    </Grid>
+    <UserControl.Resources>
+        <ResourceDictionary Source="UserCardComponentStyles.xaml"/>
+    </UserControl.Resources>
+
+    <Border Style="{StaticResource StyleBorder}">
+        <Grid DataContext="{Binding ElementName=UserCard}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0"
+                   Content="{Binding User.Id}"
+                   Style="{StaticResource StyleLabel}" />
+            <Label Grid.Row="1"
+                   Content="{Binding User.Name}"
+                   Style="{StaticResource StyleLabel}" />
+            <Label Grid.Row="2"
+                   Content="{Binding User.Username}"
+                   Style="{StaticResource StyleLabel}" />
+        </Grid>
+    </Border>
+
+
 </UserControl>

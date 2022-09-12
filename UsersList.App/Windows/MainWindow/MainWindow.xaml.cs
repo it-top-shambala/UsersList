@@ -20,7 +20,11 @@ public partial class MainWindow : Window
     {
         foreach (var user in _users)
         {
-            UsersPanel.Children.Add(new UserCardComponent(user));
+            var userCard = new UserCardComponent(user)
+            {
+                Style = (Style)Resources["StyleUserCard"]
+            };
+            UsersPanel.Children.Add(userCard);
         }
     }
 }
